@@ -7,7 +7,7 @@ import datetime
  # TODO: Ensure this is correct
 scala_version = '2.12' 
 spark_version = '3.4.1'
-kafka_broker = 'axo-kafka-test-corebroker2.jsifonte.a465-9q4k.cloudera.site:9093, axo-kafka-test-corebroker1.jsifonte.a465-9q4k.cloudera.site:9093, axo-kafka-test-corebroker0.jsifonte.a465-9q4k.cloudera.site:9093'
+kafka_broker = 'kafkabroker1:9093, kafkabroker2:9093, kafkabroker3:9093'
 kafka_user = 'user'
 kafka_pass = 'xxxxxxx'
 kafka_topic = 'test-spark'
@@ -22,7 +22,7 @@ packages = [
 ]
 spark = SparkSession.builder\
    .master("local")\
-   .appName("certification-axo-spark-kafka")\
+   .appName("certification-spark-kafka")\
    .config("spark.jars.packages", ",".join(packages))\
    .getOrCreate()
 
