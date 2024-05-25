@@ -1,3 +1,8 @@
+# Autor:  Juan Sifontes 
+# Date: 25/05/2024
+#
+# Codigo pyspark que genera datos aleatorios  los almacena en un dataframe key - value (json)  y escribe en un topico kafka 
+
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, FloatType, TimestampType
 from pyspark.sql.functions import to_json, struct, col
