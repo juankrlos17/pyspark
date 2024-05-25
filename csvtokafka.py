@@ -1,4 +1,5 @@
-# Autor:  Juan Sifontes
+# Autor:  Juan Sifontes 
+# Date: 25/05/2024
 #
 # Codigo pyspark que lee datos de un csv  y escribe en un topico kafka 
 
