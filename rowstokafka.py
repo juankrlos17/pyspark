@@ -7,11 +7,10 @@ import datetime
  # TODO: Ensure this is correct
 scala_version = '2.12' 
 spark_version = '3.4.1'
-csv_path = 's3a://jsifontes-cdp-data-east1/axo-spark-test/zeppelin/notebook/data.csv'
 kafka_broker = 'axo-kafka-test-corebroker2.jsifonte.a465-9q4k.cloudera.site:9093, axo-kafka-test-corebroker1.jsifonte.a465-9q4k.cloudera.site:9093, axo-kafka-test-corebroker0.jsifonte.a465-9q4k.cloudera.site:9093'
-kafka_user = 'jsifontes'
+kafka_user = 'user'
 kafka_pass = 'xxxxxxx'
-kafka_topic = 'axo-test-spark'
+kafka_topic = 'test-spark'
 truststore_path = '/var/lib/cloudera-scm-agent/agent-cert/cm-auto-global_truststore.jks'
 truststore_pass = 'XGYfrg376KH87dtPHb27Em700d'
 
@@ -27,12 +26,10 @@ spark = SparkSession.builder\
    .config("spark.jars.packages", ",".join(packages))\
    .getOrCreate()
 
-# Read all lines into a single value dataframe  with column 'value'
-# TODO: Replace with real file. 
-#df = spark.read.text(csv_path)
+
 
 ###########################
-
+# Generar registros aleatorios
 # Esquema para el DataFrame de transacciones
 schema = StructType([
     StructField("id_transaccion", StringType(), nullable=False),
